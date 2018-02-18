@@ -15,6 +15,7 @@ int main(int, char**)
 		return 1;
 	}
 
+	//Initalise the font library
 	if (TTF_Init() != 0)
 	{
 		std::cout << "Unable to load SDL TTF " << TTF_GetError() << std::endl;
