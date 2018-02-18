@@ -18,3 +18,6 @@
 #include <SDL_ttf.h>
 
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <vector>

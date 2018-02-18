@@ -2,7 +2,7 @@
 //
 
 #include "stdafx.h"
-
+#include "Character.h"
 
 int main(int, char**)
 {
@@ -25,6 +25,7 @@ int main(int, char**)
 	if (window == nullptr) {
 		//Print out error if this fails
 		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
+		TTF_Quit();
 		SDL_Quit();
 		return 1;
 	}
@@ -33,12 +34,34 @@ int main(int, char**)
 	SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (renderer == nullptr) {
 		//Print error and cleanup
-		SDL_DestroyWindow(window);
 		std::cout << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
+		SDL_DestroyWindow(window);
+		TTF_Quit();
 		SDL_Quit();
 		return 1;
 	}
 
+	//Load font
+	TTF_Font * currentFont = TTF_OpenFont("assets/fonts/Roboto-Regular.ttf",24);
+	if (currentFont == nullptr)
+	{
+		std::cout << "Unable to load font " << TTF_GetError()<<std::endl;
+	}
+
+	//create a vector of characters
+	std::vector<Character*> Characters;
+	//Add two characters to the vector
+	Characters.push_back(new Character("Jim", 12, 40, 0));
+	Characters.push_back(new Character("Sarah", 32, 100, 10));
+
+	//Make sure we do this after we have add every character to the vector
+	for (auto character : Characters)
+	{
+		character->BuildTextureFromFont(currentFont, renderer);
+	}
+
+	//Drawing position for the characters
+	SDL_Rect position;
 	//Controls the game loop
 	bool quit = false;
 	//Holds events coming from SDL
@@ -76,11 +99,44 @@ int main(int, char**)
 
 		//Display the work the renderer has been doing, this make something appear on the screen
 
+		//The starting position of the characters on the screen
+		position.x = 0;
+		position.y = 0;
+		position.w = 200;
+		position.h = 30;
 
+		//Iterate through the characters
+		for (auto character : Characters)
+		{
+			//Grab the texture and copy onto the renderer
+			SDL_RenderCopy(renderer, character->GetTexture(), NULL, &position);
+			//move the position on a little bit
+			position.y += position.h;
+		}
+		
 		SDL_RenderPresent(renderer);
 	}
 
+	//Delete all the characters, this is the best and probably only way top delete 
+	//everything in a vector
+	for (auto iter = Characters.begin(); iter != Characters.end();)
+	{
+		//do we have some memory assigned
+		if ((*iter))
+		{
+			//delete it
+			delete ((*iter));
+			//erase the position in the vector and return back a new iterator to
+			//the next item 
+			iter = Characters.erase(iter);
+		}
+		else
+		{
+			iter++;
+		}
+	}
 	//cleanup!
+	TTF_CloseFont(currentFont);
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	TTF_Quit();
