@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "COMP140-Collections", "COMP140-Collections\COMP140-Collections.vcxproj", "{B4194E40-9D75-4055-8D11-C59EF3F8A952}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "COMP140-Inheritance", "COMP140-Inheritance\COMP140-Inheritance.vcxproj", "{681F86DB-CBF4-4C02-9274-74C7115A4631}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "COMP140-DebugExercise", "COMP140-DebugExercise\COMP140-DebugExercise.vcxproj", "{6D837FF2-7488-41A8-AF99-00F89181C7D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,14 @@ Global
 		{681F86DB-CBF4-4C02-9274-74C7115A4631}.Release|x64.Build.0 = Release|x64
 		{681F86DB-CBF4-4C02-9274-74C7115A4631}.Release|x86.ActiveCfg = Release|Win32
 		{681F86DB-CBF4-4C02-9274-74C7115A4631}.Release|x86.Build.0 = Release|Win32
+		{6D837FF2-7488-41A8-AF99-00F89181C7D5}.Debug|x64.ActiveCfg = Debug|x64
+		{6D837FF2-7488-41A8-AF99-00F89181C7D5}.Debug|x64.Build.0 = Debug|x64
+		{6D837FF2-7488-41A8-AF99-00F89181C7D5}.Debug|x86.ActiveCfg = Debug|Win32
+		{6D837FF2-7488-41A8-AF99-00F89181C7D5}.Debug|x86.Build.0 = Debug|Win32
+		{6D837FF2-7488-41A8-AF99-00F89181C7D5}.Release|x64.ActiveCfg = Release|x64
+		{6D837FF2-7488-41A8-AF99-00F89181C7D5}.Release|x64.Build.0 = Release|x64
+		{6D837FF2-7488-41A8-AF99-00F89181C7D5}.Release|x86.ActiveCfg = Release|Win32
+		{6D837FF2-7488-41A8-AF99-00F89181C7D5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
