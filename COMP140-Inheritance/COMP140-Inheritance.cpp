@@ -29,7 +29,7 @@ int main(int, char**)
 	}
 
 	//Creare a 800x640
-	SDL_Window *window = SDL_CreateWindow("Collections", 100, 100, windowWidth, windowHeight, SDL_WINDOW_SHOWN);
+	SDL_Window *window = SDL_CreateWindow("Inheritance", 100, 100, windowWidth, windowHeight, SDL_WINDOW_SHOWN);
 	if (window == nullptr) {
 		//Print out error if this fails
 		std::cout << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
