@@ -63,8 +63,8 @@ int main(int, char**)
 	//we are taking a slice of the texture from 0,85 on x and y with a width of 16, 16
 	//see spritesheetInfo in assets/sprites folder for details
 	testSprite->SetSourceRectangle(0, 85, 16, 16);
-	//we are drawing thje sprite at 0,0 with the width and height of 16
-	testSprite->SetDestinationRectangle(0, 0, 16, 16);
+	//we are drawing thje sprite at 200,200 and 32, 32
+	testSprite->SetDestinationRectangle(200, 200, 32, 32);
 
 
 	//Controls the game loop
