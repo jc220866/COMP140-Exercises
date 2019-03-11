@@ -1,10 +1,10 @@
 #pragma once
 
 
-
 class Character
 {
 public:
+
 	Character();
 	Character(const std::string& name, int age, int health, int score);
 	~Character();
@@ -27,6 +27,7 @@ public:
 	};
 
 private:
+
 	SDL_Texture *Texture;
 
 	std::string Name;
